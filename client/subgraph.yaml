@@ -1,13 +1,25 @@
-# .graphclientrc.yml
-sources:
- - name: uniswapv2
-   handler:
-     graphql:
-       endpoint: https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2
- - name: compoundv2
-   handler:
-     graphql:
-       endpoint: https://api.thegraph.com/subgraphs/name/graphprotocol/compound-v2
- 
-documents:
- - ./src/eg.graphql
+specVersion: 0.0.4
+description: Example subgraph
+repository: https://github.com/your/repo
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: ExampleContract
+    network: mainnet
+    source:
+      address: "0xYourContractAddress"
+      abi: ExampleContract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - ExampleEntity
+      abis:
+        - name: ExampleContract
+          file: ./abis/ExampleContract.json
+      eventHandlers:
+        - event: ExampleEvent(indexed uint256, address)
+          handler: handleExampleEvent
+      file: ./src/mapping.ts

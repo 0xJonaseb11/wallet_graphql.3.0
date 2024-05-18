@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import logo from "./assets/ball_golden.jpeg";
 import { ExampleQueryDocument, ExampleQueryQuery, execute } from "../src/eg.graphql";
 
