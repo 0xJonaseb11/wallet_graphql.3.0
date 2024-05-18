@@ -44,9 +44,8 @@ graph codegen
 ### `For client intentions,`
 
 ```sh
-# install @apollo-client
+# install @apollo-client to enable interactions
 npm install @apollo/client graphql
-
 ------------
 
 @0xJonaseb11
