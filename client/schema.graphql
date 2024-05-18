@@ -1,14 +1,11 @@
 type Wallet @entity {
   id: ID!
-  owner: Bytes!
-  balance: BigInt!
-  allowances: [Allowance!]! @derivedFrom(field: "wallet")
-  transactions: [Transaction!]! @derivedFrom(field: "wallet")
+  allowance: BigInt!
+  validity: BigInt!
 }
 
 type Allowance @entity {
   id: ID!
-  wallet: Wallet!
   user: Bytes!
   allowance: BigInt!
   timeLimit: BigInt!
@@ -16,8 +13,6 @@ type Allowance @entity {
 
 type Transaction @entity {
   id: ID!
-  wallet: Wallet!
   receiver: Bytes!
   amount: BigInt!
-  timestamp: BigInt!
 }

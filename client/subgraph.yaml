@@ -1,4 +1,4 @@
-specVersion: 0.0.4
+specVersion: 0.0.5
 description: Wallet subgraph
 repository: https://github.com/0xJonaseb11/wallet_graphql.3.0
 schema:
@@ -12,7 +12,7 @@ dataSources:
       abi: WalletContract
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.4
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
         - Wallet
@@ -22,8 +22,8 @@ dataSources:
         - name: WalletContract
           file: ./abis/Wallet.json
       eventHandlers:
-        - event: AllowanceRenewed(indexed address, uint256, uint256)
+        - event: AllowanceRenewed(indexed address,uint256,uint256)
           handler: handleAllowanceRenewed
-        - event: CoinsSpent(indexed address, uint256)
+        - event: CoinsSpent(indexed address,uint256)
           handler: handleCoinsSpent
       file: ./src/mapping.ts
