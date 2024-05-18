@@ -8,7 +8,7 @@ dataSources:
     name: WalletContract
     network: testnet # Ensure this is the correct network
     source:
-      address: "0x4a9C121080f6D9250Fc0143f41B595fD172E31bf"
+      address: "0x4a9C121080f6D9250Fc0143f41B595fD172E31bfD"
       abi: WalletContract
     mapping:
       kind: ethereum/events

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import logo from "./assets/ball_golden.jpeg";
-import { ExampleQueryDocument, ExampleQueryQuery, execute } from "../src/eg.graphql";
+import { ExampleQueryDocument, ExampleQueryQuery, execute } from "../../client/schema.graphql";
 
 function App() {
   const [result, setResult] = useState<ExampleQueryQuery | null>(null);
