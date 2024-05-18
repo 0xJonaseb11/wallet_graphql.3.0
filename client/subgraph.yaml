@@ -1,25 +1,29 @@
 specVersion: 0.0.4
 description: Wallet subgraph
-repository: https://github.com/your/repo
+repository: https://github.com/0xJonaseb11/wallet_graphql.3.0
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: WalletContract
-    network: testnet
+    network: testnet # Ensure this is the correct network
     source:
-      address: "0x4a9C121080f6D9250Fc0143f41B595fD172E31bfD"
+      address: "0x4a9C121080f6D9250Fc0143f41B595fD172E31bf"
       abi: WalletContract
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
-        - ExampleEntity
+        - Wallet
+        - Allowance
+        - Transaction
       abis:
         - name: WalletContract
           file: ./abis/Wallet.json
       eventHandlers:
-        - event: ExampleEvent(indexed uint256, address)
-          handler: handleExampleEvent
+        - event: AllowanceRenewed(indexed address, uint256, uint256)
+          handler: handleAllowanceRenewed
+        - event: CoinsSpent(indexed address, uint256)
+          handler: handleCoinsSpent
       file: ./src/mapping.ts
