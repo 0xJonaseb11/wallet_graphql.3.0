@@ -1,15 +1,15 @@
 specVersion: 0.0.4
-description: Example subgraph
+description: Wallet subgraph
 repository: https://github.com/your/repo
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: ExampleContract
-    network: mainnet
+    name: WalletContract
+    network: testnet
     source:
-      address: "0xYourContractAddress"
-      abi: ExampleContract
+      address: "0x4a9C121080f6D9250Fc0143f41B595fD172E31bfD"
+      abi: WalletContract
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -17,8 +17,8 @@ dataSources:
       entities:
         - ExampleEntity
       abis:
-        - name: ExampleContract
-          file: ./abis/ExampleContract.json
+        - name: WalletContract
+          file: ./abis/Wallet.json
       eventHandlers:
         - event: ExampleEvent(indexed uint256, address)
           handler: handleExampleEvent
