@@ -18,13 +18,7 @@ npm install --save-dev @graphprotocol/client-cli
 npm install --save @graphprotocol/graph-ts
 ```
 
-``
-
-```sh
-
-```
-
-`Subgraph deployment`
+### `Subgraph deployment`
 
 ```sh
 # aunthenticate first
