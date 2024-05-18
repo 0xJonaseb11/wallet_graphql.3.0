@@ -46,6 +46,8 @@ graph codegen
 ```sh
 # install @apollo-client to enable interactions
 npm install @apollo/client graphql
+```
+
 ------------
 
 @0xJonaseb11
