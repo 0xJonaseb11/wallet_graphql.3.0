@@ -41,6 +41,12 @@ graphclient build # Note that for linux users (with me too) this didn't work til
 graph codegen 
 ```
 
+### `For client intentions,`
+
+```sh
+# install @apollo-client
+npm install @apollo/client graphql
+
 ------------
 
 @0xJonaseb11
